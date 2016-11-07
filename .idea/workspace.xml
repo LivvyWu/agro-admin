@@ -12,10 +12,13 @@
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/d3/d3.min.js" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/d3/liquidFillGauge.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+<<<<<<< Updated upstream
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/routes/farm.js" afterPath="$PROJECT_DIR$/routes/farm.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/equipment/datachart2.ejs" afterPath="$PROJECT_DIR$/views/equipment/datachart2.ejs" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/farm/info.ejs" afterPath="$PROJECT_DIR$/views/farm/info.ejs" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/head.ejs" afterPath="$PROJECT_DIR$/views/head.ejs" />
+=======
+>>>>>>> Stashed changes
     </list>
     <ignored path="agro-admin.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -217,6 +220,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
           </PATH>
+<<<<<<< Updated upstream
           <PATH>
             <PATH_ELEMENT>
               <option name="myItemId" value="agro-admin" />
@@ -421,6 +425,8 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
+=======
+>>>>>>> Stashed changes
         </subPane>
       </pane>
       <pane id="Scope" />
@@ -529,12 +535,17 @@
       <workItem from="1478501100311" duration="1703000" />
       <workItem from="1478507656783" duration="3627000" />
       <workItem from="1478516560562" duration="31000" />
+<<<<<<< Updated upstream
       <workItem from="1478516635256" duration="12000" />
       <workItem from="1478519563412" duration="7766000" />
+=======
+      <workItem from="1478516635256" duration="173000" />
+>>>>>>> Stashed changes
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
+<<<<<<< Updated upstream
     <option name="totallyTimeSpent" value="86679000" />
   </component>
   <component name="ToolWindowManager">
@@ -542,6 +553,15 @@
     <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.14488935" sideWeight="0.5" order="3" side_tool="false" content_ui="combo" />
+=======
+    <option name="totallyTimeSpent" value="79074000" />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="0" y="23" width="1366" height="741" extended-state="6" />
+    <editor active="false" />
+    <layout>
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.12639405" sideWeight="0.5" order="3" side_tool="false" content_ui="combo" />
+>>>>>>> Stashed changes
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32892805" sideWeight="0.50277996" order="0" side_tool="true" content_ui="tabs" />
       <window_info id="npm" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
