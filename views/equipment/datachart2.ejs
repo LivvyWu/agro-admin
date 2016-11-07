@@ -4,6 +4,9 @@
     <% include ../head.ejs%>
     <!-- Morris charts -->
     <link rel="stylesheet" href="/plugins/morris/morris.css">
+    <style>
+        .liquidFillGaugeText { font-family: Helvetica; font-weight: bold; }
+    </style>
 </head>
 <body  class="hold-transition skin-blue sidebar-mini">
 <div class="wrapper">
@@ -49,13 +52,15 @@
                         <div class="box-body">
                             <div class="row">
                                 <div class="col-xs-12 col-md-6 text-center">
-                                    <input type="text" class="knob" value="75" data-skin="tron" data-thickness="0.2" data-angleArc="250" data-angleOffset="-125" data-width="200" data-height="200" data-fgColor="#f56954">
 
+                                    <svg class="img-fluid" id="fillgauge2" width="40%" height="250" onclick="gauge2.update(NewValue());"></svg>
                                     <div class="knob-label">標準數值</div>
                                 </div>
 
                                 <div class="col-xs-12 col-md-6 text-center">
-                                    <input type="text" class="knob" value="85" data-skin="tron" data-thickness="0.2" data-angleArc="250" data-angleOffset="-125" data-width="200" data-height="200" data-fgColor="#00c0ef">
+
+                                    <svg class="img-fluid" id="fillgauge3" width="40%" height="250" onclick="gauge2.update(NewValue());"></svg>
+
 
                                     <div class="knob-label">一號濕度計目前濕度</div>
                                 </div>
@@ -218,6 +223,10 @@
 
 <!-- DataTables -->
 <script src="/plugins/datatables/jquery.dataTables.min.js"></script>
+<!-- D3 -->
+<!--<script src="http://d3js.org/d3.v3.min.js" language="JavaScript"></script>-->
+<script src="/plugins/d3/d3.min.js"></script>
+<script src="/plugins/d3/liquidFillGauge.js"></script>
 
 <!-- AdminLTE App -->
 <script src="/js/app.min.js"></script>
@@ -566,7 +575,29 @@
         setTimeout(mdraw, mrefreshinterval);
 
     }
+    var config1 = liquidFillGaugeDefaultSettings();
+    config1.circleColor = "#FF7777";
+    config1.textColor = "#FF4444";
+    config1.waveTextColor = "#FFAAAA";
+    config1.waveColor = "#FFDDDD";
+    config1.circleThickness = 0.2;
+    config1.textVertPosition = 0.2;
+    config1.waveAnimateTime = 1000;
+    var gauge2= loadLiquidFillGauge("fillgauge2", 70, config1);
+    var config2 = liquidFillGaugeDefaultSettings();
 
+    config2.circleThickness = 0.2;
+    config2.textVertPosition = 0.2;
+    config2.waveAnimateTime = 1000;
+
+    var gauge3= loadLiquidFillGauge("fillgauge3", 85, config2);
+    function NewValue(){
+        if(Math.random() > .5){
+            return Math.round(Math.random()*100);
+        } else {
+            return (Math.random()*100).toFixed(1);
+        }
+    }
 </script>
 </body>
 </html>
