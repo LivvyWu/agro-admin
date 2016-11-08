@@ -152,7 +152,7 @@
                                                 </div>
                                             </div>
                                             <div class="box-body chart-responsive">
-                                                <div class="chart" id="line-chart" style="height: 300px;"></div>
+                                                <div class="chart" id="line-chart1" style="height: 300px; width: 300px;"></div>
                                             </div>
                                             <!-- /.box-body -->
                                         </div>
@@ -209,7 +209,7 @@
                                                 </div>
                                             </div>
                                             <div class="box-body chart-responsive">
-                                                <div class="chart" id="line-chart" style="height: 300px;"></div>
+                                                <div class="chart" id="line-chart2" style="height: 300px;"></div>
                                             </div>
                                             <!-- /.box-body -->
                                         </div>
@@ -346,6 +346,8 @@
 <script src="/plugins/flot/jquery.flot.resize.min.js"></script>
 <!-- FLOT PIE PLUGIN - also used to draw donut charts -->
 <script src="/plugins/flot/jquery.flot.pie.min.js"></script>
+<script src="/plugins/flot/jquery.flot.time.min.js"></script>
+<script src="/plugins/flot/jquery.flot.axislabels.js"></script>
 <!-- FLOT CATEGORIES PLUGIN - Used to draw bar charts -->
 <script src="/plugins/flot/jquery.flot.categories.min.js"></script>
 
@@ -384,41 +386,52 @@
             }
         });
 
-        // LINE CHART
-        var line = new Morris.Line({
-            element: 'line-chart',
-            resize: true,
-            data: [
-                {month: '2015-01', item1: 50},
-                {month: '2015-02', item1: 60},
-                {month: '2015-03', item1: 70},
-                {month: '2015-04', item1: 55},
-                {month: '2015-05', item1: 65},
-                {month: '2015-06', item1: 75},
-                {month: '2015-07', item1: 80},
-                {month: '2015-08', item1: 44},
-                {month: '2015-09', item1: 67},
-                {month: '2015-10', item1: 88},
-                {month: '2015-11', item1: 67},
-                {month: '2015-12', item1: 67},
-            ],
-            xkey: 'month',
-            ykeys: ['item1'],
-            labels: ['濕度'],
-            lineColors: ['#f56954'],
-            hideHover: 'auto',
-            xLabelFormat: function (x) {
-                var d = new Date(x);
-                return d.getFullYear() + '/' + (d.getMonth() + 1) + "月";
-            }
+        $.each(['line-chart', 'line-chart1', 'line-chart2'], function(index, elm){
+            // LINE CHART
+            var line = new Morris.Line({
+                element: elm,
+                resize: true,
+                data: [
+                    {day: '2016-10-1', item1: 75},
+                    {day: '2016-10-2', item1: 76},
+                    {day: '2016-10-3', item1: 77},
+                    {day: '2016-10-4', item1: 87},
+                    {day: '2016-10-5', item1: 89},
+                    {day: '2016-10-6', item1: 82},
+                    {day: '2016-10-7', item1: 81},
+                    {day: '2016-10-8', item1: 88},
+                    {day: '2016-10-9', item1: 70},
+                    {day: '2016-10-10', item1: 79},
+                    {day: '2016-10-11', item1: 70},
+                    {day: '2016-10-12', item1: 78},
+                    {day: '2016-10-13', item1: 76},
+                    {day: '2016-10-14', item1: 84},
+                    {day: '2016-10-15', item1: 92},
+                    {day: '2016-10-16', item1: 90},
+                    {day: '2016-10-17', item1: 85},
+                    {day: '2016-10-18', item1: 87},
+                    {day: '2016-10-19', item1: 81}
+
+                ],
+                xkey: 'day',
+                ykeys: ['item1'],
+                labels: ['濕度'],
+                lineColors: ['#f56954'],
+                hideHover: 'auto',
+                xLabelFormat: function (x) {
+                    var d = new Date(x);
+                    return d.getFullYear() + '/' + (d.getMonth() + 1) + "/" + (d.getDate());
+                }
+            });
         });
+
         /*
          * Flot Interactive Chart
          * -----------------------
          */
         // We use an inline data source in the example, usually data would
         // be fetched from a server
-        var data = [], totalPoints = 100;
+        var data = [], totalPoints = 60;
 
         function getRandomData() {
 
@@ -428,13 +441,13 @@
             // Do a random walk
             while (data.length < totalPoints) {
 
-                var prev = data.length > 0 ? data[data.length - 1] : 50,
+                var prev = data.length > 0 ? data[data.length - 1] : 60,
                         y = prev + Math.random() * 10 - 5;
 
                 if (y < 0) {
                     y = 0;
                 } else if (y > 100) {
-                    y = 100;
+                    y = 90;
                 }
 
                 data.push(y);
@@ -442,8 +455,10 @@
 
             // Zip the generated y values with the x values
             var res = [];
+            var now = new Date();
             for (var i = 0; i < data.length; ++i) {
-                res.push([i, data[i]]);
+                var sub = now.getTime() - 1000*60*10*i;
+                res.push([now.setTime(sub), data[i]]);
             }
 
             return res;
@@ -452,7 +467,7 @@
         var interactive_plot = $.plot("#interactive", [getRandomData()], {
             grid: {
                 borderColor: "#f3f3f3",
-                borderWidth: 1,
+                borderWidth: 3,
                 tickColor: "#f3f3f3"
             },
             series: {
@@ -466,14 +481,23 @@
             yaxis: {
                 min: 0,
                 max: 100,
-                show: true
+                show: true,
+                axisLabel: '濕度(%)',
             },
             xaxis: {
-                show: true
+                show: true,
+                mode: "time",
+                axisLabel: '時間',
+                minTickSize: [1, "second"],
+                timeformat: "%Y/%m/%d"
+            },
+            legend: {
+                position: "nw",
+                labelBoxBorderColor: null
             }
         });
 
-        var updateInterval = 500; //Fetch data ever x milliseconds
+        var updateInterval = 1000; //Fetch data ever x milliseconds
         var realtime = "on"; //If == to on then fetch data every x seconds. else stop fetching
         function update() {
 
