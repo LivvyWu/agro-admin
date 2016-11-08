@@ -90,6 +90,7 @@
                                             </div>
                                             <div class="box-body chart-responsive">
                                                 <div class="chart" id="line-chart" style="height: 300px;"></div>
+                                                <!--<canvas id="line-chart" height="450" width="600"></canvas>-->
                                             </div>
                                             <!-- /.box-body -->
                                         </div>
@@ -146,7 +147,8 @@
                                                 </div>
                                             </div>
                                             <div class="box-body chart-responsive">
-                                                <div class="chart" id="line-chart1" style="height: 300px;width: 400px;"></div>
+                                                <div class="chart" id="line-chart1" style="height: 300px;"></div>
+                                                <!--<canvas id="line-chart1" height="450" width="600"></canvas>-->
                                             </div>
                                             <!-- /.box-body -->
                                         </div>
@@ -368,7 +370,7 @@
     $(function () {
 
 
-        $.each(['#example1', '#example2', '#example3'], function(index, elm){
+        $.each(['#example1', '#example2', '#example3'], function (index, elm) {
             $(elm).DataTable({
                 "paging": true,
                 "pagingType": "simple",
@@ -389,47 +391,82 @@
             });
         });
 
+        var morrisData = [
+            {day: '2016-10-1', item1: 25},
+            {day: '2016-10-2', item1: 26},
+            {day: '2016-10-3', item1: 27},
+            {day: '2016-10-4', item1: 27},
+            {day: '2016-10-5', item1: 29},
+            {day: '2016-10-6', item1: 22},
+            {day: '2016-10-7', item1: 21},
+            {day: '2016-10-8', item1: 28},
+            {day: '2016-10-9', item1: 30},
+            {day: '2016-10-10', item1: 29},
+            {day: '2016-10-11', item1: 30},
+            {day: '2016-10-12', item1: 28},
+            {day: '2016-10-13', item1: 26},
+            {day: '2016-10-14', item1: 24},
+            {day: '2016-10-15', item1: 22},
+            {day: '2016-10-16', item1: 20},
+            {day: '2016-10-17', item1: 25},
+            {day: '2016-10-18', item1: 27},
+            {day: '2016-10-19', item1: 31}
 
+        ]
 
-        $.each(['line-chart', 'line-chart1', 'line-chart2'], function(index, elm){
-            // LINE CHART
-            var line = new Morris.Line({
-                element: elm,
-                resize: true,
-                data: [
-                    {day: '2016-10-1', item1: 25},
-                    {day: '2016-10-2', item1: 26},
-                    {day: '2016-10-3', item1: 27},
-                    {day: '2016-10-4', item1: 27},
-                    {day: '2016-10-5', item1: 29},
-                    {day: '2016-10-6', item1: 22},
-                    {day: '2016-10-7', item1: 21},
-                    {day: '2016-10-8', item1: 28},
-                    {day: '2016-10-9', item1: 30},
-                    {day: '2016-10-10', item1: 29},
-                    {day: '2016-10-11', item1: 30},
-                    {day: '2016-10-12', item1: 28},
-                    {day: '2016-10-13', item1: 26},
-                    {day: '2016-10-14', item1: 24},
-                    {day: '2016-10-15', item1: 22},
-                    {day: '2016-10-16', item1: 20},
-                    {day: '2016-10-17', item1: 25},
-                    {day: '2016-10-18', item1: 27},
-                    {day: '2016-10-19', item1: 31}
-
-                ],
-                xkey: 'day',
-                ykeys: ['item1'],
-                labels: ['溫度'],
-                lineColors: ['#f56954'],
-                hideHover: 'auto',
-                xLabelFormat: function (x) {
-                    var d = new Date(x);
-                    return d.getFullYear() + '/' + (d.getMonth() + 1) + "/" + (d.getDate());
-                }
-            });
+        // LINE CHART
+        var linechart = new Morris.Line({
+            element: 'line-chart',
+            resize: true,
+            data: morrisData,
+            xkey: 'day',
+            ykeys: ['item1'],
+            labels: ['溫度'],
+            lineColors: ['#f56954'],
+            hideHover: 'auto',
+            xLabelFormat: function (x) {
+                var d = new Date(x);
+                return d.getFullYear() + '/' + (d.getMonth() + 1) + "/" + (d.getDate());
+            }
         });
 
+        // LINE CHART
+        var linechart1 = new Morris.Line({
+            element: 'line-chart1',
+            resize: true,
+            data: morrisData,
+            xkey: 'day',
+            ykeys: ['item1'],
+            labels: ['溫度'],
+            lineColors: ['#f56954'],
+            hideHover: 'auto',
+            xLabelFormat: function (x) {
+                var d = new Date(x);
+                return d.getFullYear() + '/' + (d.getMonth() + 1) + "/" + (d.getDate());
+            }
+        });
+
+        // LINE CHART
+        var linechart2 = new Morris.Line({
+            element: 'line-chart2',
+            resize: true,
+            data: morrisData,
+            xkey: 'day',
+            ykeys: ['item1'],
+            labels: ['溫度'],
+            lineColors: ['#f56954'],
+            hideHover: 'auto',
+            xLabelFormat: function (x) {
+                var d = new Date(x);
+                return d.getFullYear() + '/' + (d.getMonth() + 1) + "/" + (d.getDate());
+            }
+        });
+
+        $('ul.nav a').on('shown.bs.tab', function (e) {
+//            linechart.redraw();
+            linechart1.redraw();
+            linechart2.redraw();
+        });
 
 
         $.fn.timer = function (userdefinedoptions) {
@@ -501,7 +538,7 @@
             var res = [];
             var now = new Date();
             for (var i = 0; i < data.length; ++i) {
-                var sub = now.getTime() - 1000*60*10*i;
+                var sub = now.getTime() - 1000 * 60 * 10 * i;
                 res.push([now.setTime(sub), data[i]]);
             }
 
