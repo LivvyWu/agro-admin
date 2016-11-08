@@ -107,4 +107,14 @@ $(function() {
 
     //MapUtil.initMenu();
 
+    $('a[href="#tab_2"]').click(function(e) {
+        setTimeout(initialise, 500);
+    });
+
+    function initialise() {
+        google.maps.event.trigger(MapUtil.map, 'resize');
+        MapUtil.drawMapByGeojson(MapUtil.initJson);
+    };
+
+
 });
