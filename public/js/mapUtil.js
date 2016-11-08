@@ -9,7 +9,7 @@ var MapUtil = {
         };
         // 地圖初始設定
         var mapOptions = {
-            mapTypeId: google.maps.MapTypeId.satellite,
+            mapTypeId: google.maps.MapTypeId.SATELLITE,
             center: initCenter,
             zoom: 16
         };
