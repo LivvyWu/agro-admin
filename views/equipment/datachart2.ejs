@@ -117,7 +117,7 @@
                                                 </div>
                                             </div>
                                             <div class="box-body">
-                                                <table id="example1" class="display table table-bordered table-striped">
+                                                <table id="example2" class="display table table-bordered table-striped">
                                                     <thead>
                                                     <tr>
                                                         <th>日期</th>
@@ -174,7 +174,7 @@
                                                 </div>
                                             </div>
                                             <div class="box-body">
-                                                <table id="example1" class="display table table-bordered table-striped">
+                                                <table id="example3" class="display table table-bordered table-striped">
                                                     <thead>
                                                     <tr>
                                                         <th>日期</th>
@@ -357,6 +357,7 @@
 
 <!-- DataTables -->
 <script src="/plugins/datatables/jquery.dataTables.min.js"></script>
+<script src="/plugins/datatables/dataTables.bootstrap.min.js"></script>
 <!-- D3 -->
 <!--<script src="http://d3js.org/d3.v3.min.js" language="JavaScript"></script>-->
 <script src="/plugins/d3/d3.min.js"></script>
@@ -371,19 +372,25 @@
 
     $(function () {
 
-        $('#example1, #example2').DataTable({
-            "paging": true,
-            "pagingType": "full_numbers",
-            "lengthChange": true,
-            "searching": false,
-            "ordering": true,
-            "info": true,
-            "autoWidth": false,
-            "oLanguage": {
-                "sLengthMenu": "顯示 _MENU_ 筆記錄",
-                "sZeroRecords": "無符合資料",
-                "sInfo": "目前記錄：_START_ 至 _END_, 總筆數：_TOTAL_",
-            }
+        $.each(['#example1', '#example2', '#example3'], function(index, elm){
+            $(elm).DataTable({
+                "paging": true,
+                "pagingType": "simple",
+                "lengthChange": true,
+                "searching": false,
+                "ordering": true,
+                "info": true,
+                "autoWidth": false,
+                "oLanguage": {
+                    "sLengthMenu": "顯示 _MENU_ 筆記錄",
+                    "sZeroRecords": "無符合資料",
+                    "sInfo": "目前記錄：_START_ 至 _END_, 總筆數：_TOTAL_",
+                    "oPaginate": {
+                        "sPrevious": "上頁",
+                        "sNext": "下頁"
+                    }
+                }
+            });
         });
 
         $.each(['line-chart', 'line-chart1', 'line-chart2'], function(index, elm){
