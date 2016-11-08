@@ -74,6 +74,7 @@
                         <!-- Small boxes (Stat box) -->
                         <div class="row">
                             <% metrics.forEach(function (metrics) { %>
+                            <a href="/equipment/<%= metrics.link %>" class="small-box-footer">
                             <div class="col-md-3 col-xs-6 connectedSortable">
                                 <div class="small-box bg-aqua">
                                     <div class="inner">
@@ -83,11 +84,10 @@
                                     <div class="icon">
                                         <i class="<%= metrics.icon %>"></i>
                                     </div>
-                                    <a href="/equipment/datachart/1" class="small-box-footer">
                                         感測統計資料<i class="fa fa-arrow-circle-right"></i>
-                                    </a>
                                 </div>
                             </div>
+                            </a>
                             <% }) %>
                         </div>
                         <!-- callout -->

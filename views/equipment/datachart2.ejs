@@ -1,17 +1,20 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <% include ../head.ejs%>
+    <% include ../head.ejs %>
     <!-- Morris charts -->
     <link rel="stylesheet" href="/plugins/morris/morris.css">
     <style>
-        .liquidFillGaugeText { font-family: Helvetica; font-weight: bold; }
+        .liquidFillGaugeText {
+            font-family: Helvetica;
+            font-weight: bold;
+        }
     </style>
 </head>
-<body  class="hold-transition skin-blue sidebar-mini">
+<body class="hold-transition skin-blue sidebar-mini">
 <div class="wrapper">
-    <% include ../navigation.ejs%>
-    <% include ../sidebar.ejs%>
+    <% include ../navigation.ejs %>
+    <% include ../sidebar.ejs %>
 
     <div class="content-wrapper">
         <section class="content-header">
@@ -35,6 +38,191 @@
 
             <div class="row">
                 <div class="col-xs-12">
+                    <div class="nav-tabs-custom">
+                        <ul class="nav nav-tabs">
+                            <li class="active"><a href="#tab_1" data-toggle="tab">一號濕度計</a></li>
+                            <li><a href="#tab_2" data-toggle="tab">二號濕度計</a></li>
+                            <li><a href="#tab_3" data-toggle="tab">三號濕度計</a></li>
+                        </ul>
+                        <div class="tab-content">
+                            <div class="tab-pane active" id="tab_1">
+                                <div class="row">
+                                    <div class="col-xs-5">
+                                        <div class="box">
+                                            <div class="box-header">
+                                                <h3 class="box-title">一號農場一號濕度計歷史資料表</h3>
+                                                <div class="box-tools pull-right">
+                                                    <button type="button" class="btn btn-box-tool"
+                                                            data-widget="collapse"><i class="fa fa-minus"></i>
+                                                    </button>
+                                                    <button type="button" class="btn btn-box-tool" data-widget="remove">
+                                                        <i class="fa fa-times"></i></button>
+                                                </div>
+                                            </div>
+                                            <div class="box-body">
+                                                <table id="example1" class="display table table-bordered table-striped">
+                                                    <thead>
+                                                    <tr>
+                                                        <th>日期</th>
+                                                        <th>數值(攝氏度)</th>
+                                                    </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                    <% for(var i = 0; i < 500; i++) { %>
+                                                    <tr>
+                                                        <td><%= moment().subtract(i, 'day').format('YYYY-MM-DD') %></td>
+                                                        <td><%= (Math.random() * (40 - 5) + 5 ).toFixed(2) %></td>
+                                                    </tr>
+                                                    <% } %>
+                                                    </tfoot>
+                                                </table>
+                                            </div>
+                                            <!-- /.box-body -->
+                                        </div>
+                                        <!-- /.box -->
+                                    </div>
+                                    <div class="col-xs-7">
+                                        <div class="box box-primary">
+                                            <div class="box-header with-border">
+                                                <h3 class="box-title">一號農場一號濕度計歷史紀錄圖</h3>
+
+                                                <div class="box-tools pull-right">
+                                                    <button type="button" class="btn btn-box-tool"
+                                                            data-widget="collapse"><i class="fa fa-minus"></i>
+                                                    </button>
+                                                    <button type="button" class="btn btn-box-tool" data-widget="remove">
+                                                        <i class="fa fa-times"></i></button>
+                                                </div>
+                                            </div>
+                                            <div class="box-body chart-responsive">
+                                                <div class="chart" id="line-chart" style="height: 300px;"></div>
+                                            </div>
+                                            <!-- /.box-body -->
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tab-pane" id="tab_2">
+                                <div class="row">
+                                    <div class="col-xs-5">
+                                        <div class="box">
+                                            <div class="box-header">
+                                                <h3 class="box-title">一號農場二號濕度計歷史資料表</h3>
+                                                <div class="box-tools pull-right">
+                                                    <button type="button" class="btn btn-box-tool"
+                                                            data-widget="collapse"><i class="fa fa-minus"></i>
+                                                    </button>
+                                                    <button type="button" class="btn btn-box-tool" data-widget="remove">
+                                                        <i class="fa fa-times"></i></button>
+                                                </div>
+                                            </div>
+                                            <div class="box-body">
+                                                <table id="example1" class="display table table-bordered table-striped">
+                                                    <thead>
+                                                    <tr>
+                                                        <th>日期</th>
+                                                        <th>數值(攝氏度)</th>
+                                                    </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                    <% for(var i = 0; i < 500; i++) { %>
+                                                    <tr>
+                                                        <td><%= moment().subtract(i, 'day').format('YYYY-MM-DD') %></td>
+                                                        <td><%= (Math.random() * (40 - 5) + 5 ).toFixed(2) %></td>
+                                                    </tr>
+                                                    <% } %>
+                                                    </tfoot>
+                                                </table>
+                                            </div>
+                                            <!-- /.box-body -->
+                                        </div>
+                                        <!-- /.box -->
+                                    </div>
+                                    <div class="col-xs-7">
+                                        <div class="box box-primary">
+                                            <div class="box-header with-border">
+                                                <h3 class="box-title">一號農場二號濕度計歷史紀錄圖</h3>
+
+                                                <div class="box-tools pull-right">
+                                                    <button type="button" class="btn btn-box-tool"
+                                                            data-widget="collapse"><i class="fa fa-minus"></i>
+                                                    </button>
+                                                    <button type="button" class="btn btn-box-tool" data-widget="remove">
+                                                        <i class="fa fa-times"></i></button>
+                                                </div>
+                                            </div>
+                                            <div class="box-body chart-responsive">
+                                                <div class="chart" id="line-chart" style="height: 300px;"></div>
+                                            </div>
+                                            <!-- /.box-body -->
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tab-pane" id="tab_3">
+                                <div class="row">
+                                    <div class="col-xs-5">
+                                        <div class="box">
+                                            <div class="box-header">
+                                                <h3 class="box-title">一號農場三號濕度計歷史資料表</h3>
+                                                <div class="box-tools pull-right">
+                                                    <button type="button" class="btn btn-box-tool"
+                                                            data-widget="collapse"><i class="fa fa-minus"></i>
+                                                    </button>
+                                                    <button type="button" class="btn btn-box-tool" data-widget="remove">
+                                                        <i class="fa fa-times"></i></button>
+                                                </div>
+                                            </div>
+                                            <div class="box-body">
+                                                <table id="example1" class="display table table-bordered table-striped">
+                                                    <thead>
+                                                    <tr>
+                                                        <th>日期</th>
+                                                        <th>數值(攝氏度)</th>
+                                                    </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                    <% for(var i = 0; i < 500; i++) { %>
+                                                    <tr>
+                                                        <td><%= moment().subtract(i, 'day').format('YYYY-MM-DD') %></td>
+                                                        <td><%= (Math.random() * (40 - 5) + 5 ).toFixed(2) %></td>
+                                                    </tr>
+                                                    <% } %>
+                                                    </tfoot>
+                                                </table>
+                                            </div>
+                                            <!-- /.box-body -->
+                                        </div>
+                                        <!-- /.box -->
+                                    </div>
+                                    <div class="col-xs-7">
+                                        <div class="box box-primary">
+                                            <div class="box-header with-border">
+                                                <h3 class="box-title">一號農場三號濕度計歷史紀錄圖</h3>
+
+                                                <div class="box-tools pull-right">
+                                                    <button type="button" class="btn btn-box-tool"
+                                                            data-widget="collapse"><i class="fa fa-minus"></i>
+                                                    </button>
+                                                    <button type="button" class="btn btn-box-tool" data-widget="remove">
+                                                        <i class="fa fa-times"></i></button>
+                                                </div>
+                                            </div>
+                                            <div class="box-body chart-responsive">
+                                                <div class="chart" id="line-chart" style="height: 300px;"></div>
+                                            </div>
+                                            <!-- /.box-body -->
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-xs-12">
                     <div class="box box-solid">
                         <div class="box-header">
                             <!--<i class="fa fa-bar-chart-o"></i>-->
@@ -42,28 +230,42 @@
                             <h3 class="box-title"></h3>
 
                             <div class="box-tools pull-right">
-                                <button type="button" class="btn btn-default btn-sm" data-widget="collapse"><i class="fa fa-minus"></i>
+                                <button type="button" class="btn btn-default btn-sm" data-widget="collapse"><i
+                                            class="fa fa-minus"></i>
                                 </button>
-                                <button type="button" class="btn btn-default btn-sm" data-widget="remove"><i class="fa fa-times"></i>
+                                <button type="button" class="btn btn-default btn-sm" data-widget="remove"><i
+                                            class="fa fa-times"></i>
                                 </button>
                             </div>
                         </div>
                         <!-- /.box-header -->
                         <div class="box-body">
                             <div class="row">
-                                <div class="col-xs-12 col-md-6 text-center">
+                                <div class="col-xs-3 text-center">
 
-                                    <svg class="img-fluid" id="fillgauge2" width="40%" height="250" onclick="gauge2.update(NewValue());"></svg>
+                                    <svg class="img-fluid" id="fillgauge0"
+                                         onclick="gauge0.update(NewValue());"></svg>
                                     <div class="knob-label">標準數值</div>
                                 </div>
 
-                                <div class="col-xs-12 col-md-6 text-center">
-
-                                    <svg class="img-fluid" id="fillgauge3" width="40%" height="250" onclick="gauge2.update(NewValue());"></svg>
-
-
+                                <div class="col-xs-3 text-center">
+                                    <svg class="img-fluid" id="fillgauge1"
+                                         onclick="gauge1.update(NewValue());"></svg>
                                     <div class="knob-label">一號濕度計目前濕度</div>
                                 </div>
+
+                                <div class="col-xs-3 text-center">
+                                    <svg class="img-fluid" id="fillgauge2"
+                                         onclick="gauge2.update(NewValue());"></svg>
+                                    <div class="knob-label">二號濕度計目前濕度</div>
+                                </div>
+
+                                <div class="col-xs-3 text-center">
+                                    <svg class="img-fluid" id="fillgauge3"
+                                         onclick="gauge3.update(NewValue());"></svg>
+                                    <div class="knob-label">三號濕度計目前濕度</div>
+                                </div>
+
                             </div>
                             <!-- /.row -->
 
@@ -75,33 +277,11 @@
 
             </div>
 
-            <div class="row">
-                <div class="col-xs-12">
-                    <div class="box box-solid">
-                        <div class="box-header with-border">
-                            <i class="fa fa-text-width"></i>
-                            <h3 class="box-title">一號濕度計基本資料</h3>
-                        </div>
-                        <!-- /.box-header -->
-                        <div class="box-body">
-                            <dl class="dl-horizontal">
-                                <dt>設備類型</dt>
-                                <dd>濕度計</dd>
-                                <dt>設備名稱</dt>
-                                <dd>一號濕度計</dd>
-                                <dt>農場</dt>
-                                <dd>二號農場</dd>
-                                <dt>建立時間</dt>
-                                <dd>1981/10/29</dd>
-                            </dl>
-                        </div>
-                        <!-- /.box-body -->
-                    </div>
-                    <!-- /.box -->
-                </div>
+            <!-- callout -->
+            <div class="callout callout-info">
+                <h4>查看農場環控統計資料 <a href="/farm/sensorRecord">前往<i class="fa fa-arrow-circle-right"></i></a></h4>
             </div>
-
-
+            <!-- /.callout -->
 
             <div class="row">
                 <div class="col-xs-12">
@@ -110,12 +290,13 @@
                         <div class="box-header with-border">
                             <i class="fa fa-bar-chart-o"></i>
 
-                            <h3 class="box-title">一號溫度計 即時監控</h3>
+                            <h3 class="box-title">農場濕度 即時監控</h3>
 
                             <div class="box-tools pull-right">
                                 即時
                                 <div class="btn-group" id="realtime" data-toggle="btn-toggle">
-                                    <button type="button" class="btn btn-default btn-xs active" data-toggle="on">開</button>
+                                    <button type="button" class="btn btn-default btn-xs active" data-toggle="on">開
+                                    </button>
                                     <button type="button" class="btn btn-default btn-xs" data-toggle="off">關</button>
                                 </div>
                             </div>
@@ -134,60 +315,11 @@
             </div>
             <!-- /.row -->
 
-            <div class="row">
-                <div class="col-xs-5">
-                    <div class="box">
-                        <div class="box-header">
-                            <h3 class="box-title">一號農場二號濕度計歷史資料表</h3>
-                            <div class="box-tools pull-right">
-                                <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
-                                </button>
-                                <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
-                            </div>
-                        </div>
-                        <div class="box-body">
-                            <table id="example1" class="display table table-bordered table-striped">
-                                <thead>
-                                <tr>
-                                    <th>日期</th>
-                                    <th>數值(濕度)</th>
-                                </tr>
-                                </thead>
-                                <tbody>
-                                <% for(var i = 0; i < 500; i++) { %>
-                                <tr>
-                                    <td><%= moment().subtract(i, 'day').format('YYYY-MM-DD') %></td>
-                                    <td><%= (Math.random() * (40 - 5) + 5 ).toFixed(2)%></td>
-                                </tr>
-                                <% } %>
-                                </tfoot>
-                            </table>
-                        </div>
-                        <!-- /.box-body -->
-                    </div>
-                    <!-- /.box -->
-                </div>
-                <div class="col-xs-7">
-                    <div class="box box-primary">
-                        <div class="box-header with-border">
-                            <h3 class="box-title">一號農場二號溫度計歷史紀錄圖</h3>
-
-                            <div class="box-tools pull-right">
-                                <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
-                                </button>
-                                <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
-                            </div>
-                        </div>
-                        <div class="box-body chart-responsive">
-                            <div class="chart" id="line-chart" style="height: 300px;"></div>
-                        </div>
-                        <!-- /.box-body -->
-                    </div>
-                </div>
+            <!-- callout -->
+            <div class="callout callout-info">
+                <h4>查看其他感測器資料 <a href="/farm/info">前往<i class="fa fa-arrow-circle-right"></i></a></h4>
             </div>
-
-
-
+            <!-- /.callout -->
 
 
         </section>
@@ -235,7 +367,7 @@
 
 <script>
 
-    $(function(){
+    $(function () {
 
         $('#example1, #example2').DataTable({
             "paging": true,
@@ -275,7 +407,7 @@
             labels: ['濕度'],
             lineColors: ['#f56954'],
             hideHover: 'auto',
-            xLabelFormat: function (x){
+            xLabelFormat: function (x) {
                 var d = new Date(x);
                 return d.getFullYear() + '/' + (d.getMonth() + 1) + "月";
             }
@@ -381,7 +513,7 @@
              cancel : function () {
              console.log("cancel : " + this.value);
              },*/
-            "readOnly":true,
+            "readOnly": true,
             draw: function () {
 
                 // "tron" case
@@ -583,19 +715,22 @@
     config1.circleThickness = 0.2;
     config1.textVertPosition = 0.2;
     config1.waveAnimateTime = 1000;
-    var gauge2= loadLiquidFillGauge("fillgauge2", 70, config1);
-    var config2 = liquidFillGaugeDefaultSettings();
+    var gauge0 = loadLiquidFillGauge("fillgauge0", 70, config1);
 
+    var config2 = liquidFillGaugeDefaultSettings();
     config2.circleThickness = 0.2;
     config2.textVertPosition = 0.2;
     config2.waveAnimateTime = 1000;
 
-    var gauge3= loadLiquidFillGauge("fillgauge3", 85, config2);
-    function NewValue(){
-        if(Math.random() > .5){
-            return Math.round(Math.random()*100);
+    var gauge1 = loadLiquidFillGauge("fillgauge1", 85, config2);
+    var gauge2 = loadLiquidFillGauge("fillgauge2", 80, config2);
+    var gauge3 = loadLiquidFillGauge("fillgauge3", 83, config2);
+
+    function NewValue() {
+        if (Math.random() > .5) {
+            return Math.round(Math.random() * 100);
         } else {
-            return (Math.random()*100).toFixed(1);
+            return (Math.random() * 100).toFixed(1);
         }
     }
 </script>

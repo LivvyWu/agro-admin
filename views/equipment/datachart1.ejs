@@ -1,14 +1,14 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <% include ../head.ejs%>
+    <% include ../head.ejs %>
     <!-- Morris charts -->
     <link rel="stylesheet" href="/plugins/morris/morris.css">
 </head>
-<body  class="hold-transition skin-blue sidebar-mini">
+<body class="hold-transition skin-blue sidebar-mini">
 <div class="wrapper">
-    <% include ../navigation.ejs%>
-    <% include ../sidebar.ejs%>
+    <% include ../navigation.ejs %>
+    <% include ../sidebar.ejs %>
 
     <div class="content-wrapper">
         <section class="content-header">
@@ -46,9 +46,11 @@
                                             <div class="box-header">
                                                 <h3 class="box-title">一號農場一號溫度計歷史資料表</h3>
                                                 <div class="box-tools pull-right">
-                                                    <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
+                                                    <button type="button" class="btn btn-box-tool"
+                                                            data-widget="collapse"><i class="fa fa-minus"></i>
                                                     </button>
-                                                    <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
+                                                    <button type="button" class="btn btn-box-tool" data-widget="remove">
+                                                        <i class="fa fa-times"></i></button>
                                                 </div>
                                             </div>
                                             <div class="box-body">
@@ -63,7 +65,7 @@
                                                     <% for(var i = 0; i < 500; i++) { %>
                                                     <tr>
                                                         <td><%= moment().subtract(i, 'day').format('YYYY-MM-DD') %></td>
-                                                        <td><%= (Math.random() * (40 - 5) + 5 ).toFixed(2)%></td>
+                                                        <td><%= (Math.random() * (40 - 5) + 5 ).toFixed(2) %></td>
                                                     </tr>
                                                     <% } %>
                                                     </tfoot>
@@ -79,9 +81,11 @@
                                                 <h3 class="box-title">一號農場一號溫度計歷史紀錄圖</h3>
 
                                                 <div class="box-tools pull-right">
-                                                    <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
+                                                    <button type="button" class="btn btn-box-tool"
+                                                            data-widget="collapse"><i class="fa fa-minus"></i>
                                                     </button>
-                                                    <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
+                                                    <button type="button" class="btn btn-box-tool" data-widget="remove">
+                                                        <i class="fa fa-times"></i></button>
                                                 </div>
                                             </div>
                                             <div class="box-body chart-responsive">
@@ -99,9 +103,11 @@
                                             <div class="box-header">
                                                 <h3 class="box-title">一號農場二號溫度計歷史資料表</h3>
                                                 <div class="box-tools pull-right">
-                                                    <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
+                                                    <button type="button" class="btn btn-box-tool"
+                                                            data-widget="collapse"><i class="fa fa-minus"></i>
                                                     </button>
-                                                    <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
+                                                    <button type="button" class="btn btn-box-tool" data-widget="remove">
+                                                        <i class="fa fa-times"></i></button>
                                                 </div>
                                             </div>
                                             <div class="box-body">
@@ -116,7 +122,7 @@
                                                     <% for(var i = 0; i < 500; i++) { %>
                                                     <tr>
                                                         <td><%= moment().subtract(i, 'day').format('YYYY-MM-DD') %></td>
-                                                        <td><%= (Math.random() * (40 - 5) + 5 ).toFixed(2)%></td>
+                                                        <td><%= (Math.random() * (40 - 5) + 5 ).toFixed(2) %></td>
                                                     </tr>
                                                     <% } %>
                                                     </tfoot>
@@ -132,9 +138,11 @@
                                                 <h3 class="box-title">一號農場二號溫度計歷史紀錄圖</h3>
 
                                                 <div class="box-tools pull-right">
-                                                    <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
+                                                    <button type="button" class="btn btn-box-tool"
+                                                            data-widget="collapse"><i class="fa fa-minus"></i>
                                                     </button>
-                                                    <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
+                                                    <button type="button" class="btn btn-box-tool" data-widget="remove">
+                                                        <i class="fa fa-times"></i></button>
                                                 </div>
                                             </div>
                                             <div class="box-body chart-responsive">
@@ -152,9 +160,11 @@
                                             <div class="box-header">
                                                 <h3 class="box-title">一號農場三號溫度計歷史資料表</h3>
                                                 <div class="box-tools pull-right">
-                                                    <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
+                                                    <button type="button" class="btn btn-box-tool"
+                                                            data-widget="collapse"><i class="fa fa-minus"></i>
                                                     </button>
-                                                    <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
+                                                    <button type="button" class="btn btn-box-tool" data-widget="remove">
+                                                        <i class="fa fa-times"></i></button>
                                                 </div>
                                             </div>
                                             <div class="box-body">
@@ -169,7 +179,7 @@
                                                     <% for(var i = 0; i < 500; i++) { %>
                                                     <tr>
                                                         <td><%= moment().subtract(i, 'day').format('YYYY-MM-DD') %></td>
-                                                        <td><%= (Math.random() * (40 - 5) + 5 ).toFixed(2)%></td>
+                                                        <td><%= (Math.random() * (40 - 5) + 5 ).toFixed(2) %></td>
                                                     </tr>
                                                     <% } %>
                                                     </tfoot>
@@ -185,9 +195,11 @@
                                                 <h3 class="box-title">一號農場三號溫度計歷史紀錄圖</h3>
 
                                                 <div class="box-tools pull-right">
-                                                    <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
+                                                    <button type="button" class="btn btn-box-tool"
+                                                            data-widget="collapse"><i class="fa fa-minus"></i>
                                                     </button>
-                                                    <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
+                                                    <button type="button" class="btn btn-box-tool" data-widget="remove">
+                                                        <i class="fa fa-times"></i></button>
                                                 </div>
                                             </div>
                                             <div class="box-body chart-responsive">
@@ -203,11 +215,6 @@
                 </div>
             </div>
 
-            <!-- callout -->
-            <div class="callout callout-info">
-                <h4>查看其他感測器資料 <a href="/farm/info">前往<i class="fa fa-arrow-circle-right"></i></a></h4>
-            </div>
-            <!-- /.callout -->
             <div class="row">
                 <div class="col-xs-12">
                     <div class="box box-solid">
@@ -217,9 +224,11 @@
                             <h3 class="box-title"></h3>
 
                             <div class="box-tools pull-right">
-                                <button type="button" class="btn btn-default btn-sm" data-widget="collapse"><i class="fa fa-minus"></i>
+                                <button type="button" class="btn btn-default btn-sm" data-widget="collapse"><i
+                                            class="fa fa-minus"></i>
                                 </button>
-                                <button type="button" class="btn btn-default btn-sm" data-widget="remove"><i class="fa fa-times"></i>
+                                <button type="button" class="btn btn-default btn-sm" data-widget="remove"><i
+                                            class="fa fa-times"></i>
                                 </button>
                             </div>
                         </div>
@@ -228,28 +237,36 @@
                             <div class="row">
                                 <!-- /.col -->
                                 <div class="col-xs-3 text-center">
-                                    <input type="text" class="knob" data-thickness="0.2" data-angleArc="250" data-angleOffset="-125" value="37.8" data-width="150" data-height="150" data-fgColor="#f56954">
+                                    <input type="text" class="knob" data-thickness="0.2" data-angleArc="250"
+                                           data-angleOffset="-125" value="37.8" data-width="150" data-height="150"
+                                           data-fgColor="#f56954">
 
                                     <div class="knob-label" style="font-size: large">標準數值(區間）</div>
                                 </div>
 
                                 <!-- /.col -->
                                 <div class="col-xs-3 text-center">
-                                    <input type="text" class="knob" data-thickness="0.2" data-angleArc="250" data-angleOffset="-125" value="34.5" data-width="150" data-height="150" data-fgColor="#00c0ef">
+                                    <input type="text" class="knob" data-thickness="0.2" data-angleArc="250"
+                                           data-angleOffset="-125" value="34.5" data-width="150" data-height="150"
+                                           data-fgColor="#00c0ef">
 
                                     <div class="knob-label" style="font-size: large">一號溫度計目前溫度</div>
                                 </div>
 
                                 <!-- /.col -->
                                 <div class="col-xs-3 text-center">
-                                    <input type="text" class="knob" data-thickness="0.2" data-angleArc="250" data-angleOffset="-125" value="34.5" data-width="150" data-height="150" data-fgColor="#00c0ef">
+                                    <input type="text" class="knob" data-thickness="0.2" data-angleArc="250"
+                                           data-angleOffset="-125" value="34.5" data-width="150" data-height="150"
+                                           data-fgColor="#00c0ef">
 
                                     <div class="knob-label" style="font-size: large">二號溫度計目前溫度</div>
                                 </div>
 
                                 <!-- /.col -->
                                 <div class="col-xs-3 text-center">
-                                    <input type="text" class="knob" data-thickness="0.2" data-angleArc="250" data-angleOffset="-125" value="34.5" data-width="150" data-height="150" data-fgColor="#00c0ef">
+                                    <input type="text" class="knob" data-thickness="0.2" data-angleArc="250"
+                                           data-angleOffset="-125" value="34.5" data-width="150" data-height="150"
+                                           data-fgColor="#00c0ef">
 
                                     <div class="knob-label" style="font-size: large">三號溫度計目前溫度</div>
                                 </div>
@@ -265,67 +282,11 @@
 
             </div>
 
-            <!--<div class="row">-->
-                <!--<div class="col-xs-12">-->
-                    <!--<div class="box box-solid">-->
-                        <!--<div class="box-header with-border">-->
-                            <!--<i class="fa fa-text-width"></i>-->
-                            <!--<h3 class="box-title">一號溫度計基本資料</h3>-->
-                        <!--</div>-->
-                        <!--&lt;!&ndash; /.box-header &ndash;&gt;-->
-                        <!--<div class="box-body">-->
-                            <!--<dl class="dl-horizontal">-->
-                                <!--<dt>設備類型</dt>-->
-                                <!--<dd>溫度計</dd>-->
-                                <!--<dt>設備名稱</dt>-->
-                                <!--<dd>一號溫度計</dd>-->
-                                <!--<dt>農場</dt>-->
-                                <!--<dd>一號農場</dd>-->
-                                <!--<dt>建立時間</dt>-->
-                                <!--<dd>1981/10/29</dd>-->
-                            <!--</dl>-->
-                        <!--</div>-->
-                        <!--&lt;!&ndash; /.box-body &ndash;&gt;-->
-                    <!--</div>-->
-                    <!--&lt;!&ndash; /.box &ndash;&gt;-->
-                <!--</div>-->
-            <!--</div>-->
-
-            <!--<div class="row">-->
-                <!--<div class="col-xs-12">-->
-                    <!--<div class="box box-solid">-->
-                        <!--<div class="box-header">-->
-                            <!--&lt;!&ndash;<i class="fa fa-bar-chart-o"></i>&ndash;&gt;-->
-
-                            <!--<h3 class="box-title"></h3>-->
-
-                            <!--<div class="box-tools pull-right">-->
-                                <!--<button type="button" class="btn btn-default btn-sm" data-widget="collapse"><i class="fa fa-minus"></i>-->
-                                <!--</button>-->
-                                <!--<button type="button" class="btn btn-default btn-sm" data-widget="remove"><i class="fa fa-times"></i>-->
-                                <!--</button>-->
-                            <!--</div>-->
-                        <!--</div>-->
-                        <!--&lt;!&ndash; /.box-header &ndash;&gt;-->
-                        <!--<div class="box-body">-->
-                            <!--<div class="row">-->
-                                <!--&lt;!&ndash; /.col &ndash;&gt;-->
-                                <!--<div class="col-xs-12 text-center">-->
-                                    <!--<input type="text" class="knob1" data-thickness="0.2" data-angleArc="250" data-angleOffset="-125" >-->
-
-                                    <!--<div class="knob-label" style="font-size: large">水位</div>-->
-                                <!--</div>-->
-
-
-                            <!--&lt;!&ndash; /.row &ndash;&gt;-->
-                        <!--</div>-->
-                        <!--&lt;!&ndash; /.box-body &ndash;&gt;-->
-                    <!--</div>-->
-                    <!--&lt;!&ndash; /.box &ndash;&gt;-->
-                <!--</div>-->
-
-            <!--</div>-->
-
+            <!-- callout -->
+            <div class="callout callout-info">
+                <h4>查看農場環控統計資料 <a href="/farm/sensorRecord">前往<i class="fa fa-arrow-circle-right"></i></a></h4>
+            </div>
+            <!-- /.callout -->
 
 
             <div class="row">
@@ -340,7 +301,8 @@
                             <div class="box-tools pull-right">
                                 即時
                                 <div class="btn-group" id="realtime" data-toggle="btn-toggle">
-                                    <button type="button" class="btn btn-default btn-xs active" data-toggle="on">開</button>
+                                    <button type="button" class="btn btn-default btn-xs active" data-toggle="on">開
+                                    </button>
                                     <button type="button" class="btn btn-default btn-xs" data-toggle="off">關</button>
                                 </div>
                             </div>
@@ -353,10 +315,9 @@
             </div>
             <!-- callout -->
             <div class="callout callout-info">
-                <h4>查看農場環控統計資料 <a href="/farm/sensorRecord">前往<i class="fa fa-arrow-circle-right"></i></a></h4>
+                <h4>查看其他感測器資料 <a href="/farm/info">前往<i class="fa fa-arrow-circle-right"></i></a></h4>
             </div>
             <!-- /.callout -->
-
 
         </section>
     </div>
@@ -399,7 +360,7 @@
 
 <script>
 
-    $(function(){
+    $(function () {
 
         $('#example1, #example2').DataTable({
             "paging": true,
@@ -439,43 +400,43 @@
             labels: ['濕度'],
             lineColors: ['#f56954'],
             hideHover: 'auto',
-            xLabelFormat: function (x){
+            xLabelFormat: function (x) {
                 var d = new Date(x);
                 return d.getFullYear() + '/' + (d.getMonth() + 1) + "月";
             }
         });
 
-        $.fn.timer = function( userdefinedoptions ){
+        $.fn.timer = function (userdefinedoptions) {
             var $this = $(this), opt, count = 0;
 
 
-            opt = $.extend( {
+            opt = $.extend({
                         // Config
-                        'timer' : 100, // 300 second default
-                        'width' : 200 ,
-                        'height' : 200 ,
-                        'fgColor' : "#ED7A53" ,
-                        'bgColor' : "#232323"
+                        'timer': 100, // 300 second default
+                        'width': 200,
+                        'height': 200,
+                        'fgColor': "#ED7A53",
+                        'bgColor': "#232323"
                     }, userdefinedoptions
             );
 
 
             $this.knob({
-                'min':0,
+                'min': 0,
                 'max': opt.timer,
                 'readOnly': true,
                 'width': opt.width,
                 'height': opt.height,
                 'fgColor': opt.fgColor,
                 'bgColor': opt.bgColor,
-                'displayInput' : false,
+                'displayInput': false,
                 'dynamicDraw': false,
                 'ticks': 0,
                 'thickness': 0.4
             });
 
 
-            setInterval(function(){
+            setInterval(function () {
                 newVal = ++count;
                 $this.val(newVal).trigger('change');
             }, 1000);
@@ -585,7 +546,7 @@
              cancel : function () {
              console.log("cancel : " + this.value);
              },*/
-            "readOnly":true,
+            "readOnly": true,
             draw: function () {
 
                 // "tron" case
