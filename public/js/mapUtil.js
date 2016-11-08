@@ -102,7 +102,7 @@ var MapUtil = {
 $(function() {
 
     var script = document.createElement('script');
-    script.src = "https://maps.googleapis.com/maps/api/js?key=AIzaSyCe_1dogFL3zGZ1YhsWq3dtbANudd_C3KQ&sensor=false&callback=MapUtil.initMap";
+    script.src = "https://maps.googleapis.com/maps/api/js?key=AIzaSyChfI1-oqMofLkx25FHvywmpKUpSgRs9hk&sensor=false&callback=MapUtil.initMap";
     document.body.appendChild(script);
 
     //MapUtil.initMenu();
