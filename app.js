@@ -10,7 +10,7 @@ var users = require('./routes/users');
 
 var farm = require('./routes/farm');
 var equipment = require('./routes/equipment');
-var calendar = require('./routes/calendar');
+var abnormal = require('./routes/abnormal');
 
 var app = express();
 
@@ -29,6 +29,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/', routes);
 app.use('/farm', farm);
 app.use('/equipment', equipment);
+app.use('/abnormal', abnormal);
 // app.use('/calendar', calendar);
 
 // catch 404 and forward to error handler

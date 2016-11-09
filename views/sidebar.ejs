@@ -1,5 +1,6 @@
+
 <!-- Left side column. contains the logo and sidebar -->
-<aside class="main-sidebar">
+<aside class="main-sidebar skin-blue">
     <!-- sidebar: style can be found in sidebar.less -->
     <section class="sidebar">
         <!-- search form -->
@@ -15,7 +16,7 @@
         <!-- /.search form -->
         <!-- sidebar menu: : style can be found in sidebar.less -->
         <ul class="sidebar-menu">
-            <li class="header">功能列</li>
+            <!--<li class="header">功能列</li>-->
             <li class="active treeview">
                 <a href="#">
                     <i class="fa fa-object-group"></i> <span>農場</span>
@@ -25,7 +26,7 @@
                 </a>
                 <ul class="treeview-menu">
                     <li class="active"><a href="/farm/"><i class="fa fa-circle-o"></i>農場列表</a></li>
-                    <!--<li><a href="/farm/farmDetail"><i class="fa fa-circle-o"></i>農場資訊</a></li>-->
+
                     <li><a href="/farm/sensorRecord"><i class="fa fa-circle-o"></i>環控統計</a></li>
                 </ul>
             </li>
@@ -38,17 +39,18 @@
                 </a>
                 <ul class="treeview-menu">
                     <li class="active"><a href="/equipment/"><i class="fa fa-circle-o"></i>設備列表</a></li>
-                    <!--<li><a href="/equipmemt/all/info"><i class="fa fa-circle-o"></i>設備資訊</a></li>-->
-                    <!--<li><a href="/equipmemt/history/data"><i class="fa fa-circle-o"></i>量測資料</a></li>-->
                 </ul>
             </li>
             <li class="treeview">
             <a href="/farm/abnormal">
-            <i class="fa fa-calendar-check-o"></i> <span>示警紀錄</span>
+            <i class="fa fa-calendar-check-o"></i> <span>示警</span>
             <span class="pull-right-container">
             <i class="fa fa-angle-left pull-right"></i>
             </span>
             </a>
+                <ul class="treeview-menu">
+                    <li class="active"><a href="/abnormal/"><i class="fa fa-circle-o"></i>示警紀錄</a></li>
+                </ul>
             </li>
             <!--<li class="treeview">-->
                 <!--<a href="/calendar">-->

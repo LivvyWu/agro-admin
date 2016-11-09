@@ -12,22 +12,25 @@
 
         <section class="content-header">
             <h1>
-                第一農場 - 農場環控
+                中和農場 2場
+
             </h1>
+
             <ol class="breadcrumb">
                 <li><a href="#"><i class="fa fa-dashboard"></i> 首頁</a></li>
                 <li><a href="#">農場</a></li>
-                <li class="active">第一農場</li>
+                <li><a href="#">農場列表</a></li>
+                <li class="active">中和農場 2場</li>
             </ol>
         </section>
 
         <div class="content">
 
             <div class="box-body ">
-                <div class="alert alert-farm-success alert-dismissible">
-                    <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
-                    <h4><i class="icon fa fa-check"></i> 無警示!</h4> 目前農場環控感測正常
-                </div>
+                <!--<div class="alert alert-farm-success alert-dismissible">-->
+                <!--<button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>-->
+                <!--<h4><i class="icon fa fa-check"></i> 無警示!</h4> 目前農場環控感測正常-->
+                <!--</div>-->
                 <div class="box box-danger">
                     <div class="box-header with-border bg-red">
                         <button type="button" class="close" data-dismiss="alert" aria-hidden="true"></button>
@@ -56,7 +59,6 @@
                                                 class="fa fa-exclamation-triangle">土壤濕度太低，請啟動灑水器。前往處理</i>
                                         <span class="pull-right text-red"></i> 尚未處理</span></a></li>
                             </ul>
-
                         </div>
                         <!-- /.row -->
                     </div>
@@ -66,38 +68,59 @@
 
             <div class="nav-tabs-custom">
                 <ul class="nav nav-tabs">
-                    <li><a href="#tab_1" data-toggle="tab">農場環控</a></li>
-                    <li class="active"><a href="#tab_2" data-toggle="tab">農場資料</a></li>
+                    <li class="active"><a href="#tab_1" data-toggle="tab">農場環控</a></li>
+                    <li class=""><a href="#tab_2" data-toggle="tab">農場資料</a></li>
                 </ul>
+
+
+                <!--<div class="row">-->
+
+                <!--<% metrics.forEach(function (metrics) { %>-->
+                <!--<a href="/equipment/<%= metrics.link %>" class="small-box-footer">-->
+                <!--<div class="col-md-3 col-xs-6 connectedSortable">-->
+                <!--<div class="info-box">-->
+                <!--&lt;!&ndash; Apply any bg-* class to to the icon to color it &ndash;&gt;-->
+                <!--<span class="info-box-icon bg-red"><i class="<%= metrics.icon %>"></i></span>-->
+                <!--<div class="info-box-content">-->
+                <!--<div class="inner">-->
+                <!--<h4><%= metrics.itemNm %></h4>-->
+                <!--<h1><%= metrics.val %></h1>-->
+                <!--</div>-->
+                <!--</div>&lt;!&ndash; /.info-box-content &ndash;&gt;-->
+
+                <!--<div class="text-center">-->
+                <!--感測統計資料<i class="fa fa-arrow-circle-right"></i>-->
+                <!--</div>-->
+                <!--</div>&lt;!&ndash; /.info-box &ndash;&gt;-->
+                <!--</div>-->
+                <!--<% }) %>-->
+                <!--</div>-->
+
                 <div class="tab-content">
-                    <div class="tab-pane" id="tab_1">
+                    <div class="tab-pane active" id="tab_1">
                         <!-- Small boxes (Stat box) -->
                         <div class="row">
                             <% metrics.forEach(function (metrics) { %>
-                            <a href="/equipment/<%= metrics.link %>" class="small-box-footer">
-                            <div class="col-md-3 col-xs-6 connectedSortable">
-                                <div class="small-box bg-aqua">
-                                    <div class="inner">
-                                        <h4><%= metrics.itemNm %></h4>
-                                        <h1><%= metrics.val %></h1>
+                            <a href="/farm/<%= metrics.link %>" class="small-box-footer">
+                                <div class="col-md-3 col-xs-6 connectedSortable <%= metrics.itemCd %>">
+                                    <div class="small-box">
+                                        <div class="inner">
+                                            <h4><%= metrics.itemNm %></h4>
+                                            <h1><%= metrics.val %></h1>
+                                        </div>
+                                        <div class="icon">
+                                            <i class="<%= metrics.icon %>"></i>
+                                        </div>
+                                        <div class="text-center">
+                                            感測統計資料<i class="fa fa-arrow-circle-right"></i>
+                                        </div>
                                     </div>
-                                    <div class="icon">
-                                        <i class="<%= metrics.icon %>"></i>
-                                    </div>
-                                        感測統計資料<i class="fa fa-arrow-circle-right"></i>
                                 </div>
-                            </div>
                             </a>
                             <% }) %>
                         </div>
-                        <!-- callout -->
-                        <div class="callout callout-info">
-                            <h4>查看農場環控統計資料 <a href="/farm/sensorRecord">前往<i class="fa fa-arrow-circle-right"></i></a>
-                            </h4>
-                        </div>
-                        <!-- /.callout -->
                     </div>
-                    <div class="tab-pane active" id="tab_2">
+                    <div class="tab-pane" id="tab_2">
                         <div class="row">
                             <section class="col-md-5 connectedSortable">
                                 <!-- Map box -->
@@ -188,10 +211,6 @@
                             <ul class="nav nav-tabs">
                                 <li class="active"><a href="#tab_4" data-toggle="tab">感測器列表</a></li>
                                 <li class=""><a href="#tab_activity" data-toggle="tab">田間作業計畫</a></li>
-                                <!--<li><a href="#tab_2" data-toggle="tab">施肥計畫</a></li>-->
-                                <!--<li><a href="#tab_3" data-toggle="tab">防疫計畫</a></li>-->
-
-                                <!--<li class="pull-right"><a href="#" class="text-muted"><i class="fa fa-gear"></i></a></li>-->
                             </ul>
                             <div class="tab-content">
 
@@ -405,31 +424,20 @@
                                     </div>
                                     <!-- /.box -->
                                 </div>
-                                <!--<div class="tab-pane" id="tab_2">-->
-                                <!--<div class="tab-pane active" id="tab_1">-->
-                                <!--<div class="box">-->
-                                <!--<div class="box-body">-->
-                                <!--目前無計畫-->
-                                <!--</div>-->
-                                <!--</div>-->
-                                <!--</div>-->
-                                <!--</div>-->
-                                <!--<div class="tab-pane" id="tab_3">-->
-                                <!--<div class="tab-pane active" id="tab_1">-->
-                                <!--<div class="box">-->
-                                <!--<div class="box-body">-->
-                                <!--目前無計畫-->
-                                <!--</div>-->
-                                <!--</div>-->
-                                <!--</div>-->
-                                <!--</div>-->
 
                             </div>
                         </div>
                     </div>
                 </div>
+
             </div>
 
+            <!-- callout -->
+            <div class="callout bg-light-blue">
+                <h4>查看農場環控歷史統計資料 <a href="/farm/sensorRecord">前往<i class="fa fa-arrow-circle-right"></i></a>
+                </h4>
+            </div>
+            <!-- /.callout -->
 
         </div>
 
