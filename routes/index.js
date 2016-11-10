@@ -26,4 +26,10 @@ router.post('/login/submit', function(req, res, next) {
   res.redirect("/farm");
 });
 
+/* GET home page. */
+router.post('/register/submit', function(req, res, next) {
+
+  res.redirect("/farm");
+});
+
 module.exports = router;
