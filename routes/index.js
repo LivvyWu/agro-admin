@@ -14,6 +14,8 @@ router.get('/register', function(req, res, next) {
 /* GET home page. */
 router.post('/login/submit', function(req, res, next) {
 
+  console.log(req.body.password);
+
   res.redirect("/farm");
 });
 

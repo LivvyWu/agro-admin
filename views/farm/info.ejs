@@ -11,16 +11,11 @@
     <div class="content-wrapper">
 
         <section class="content-header">
-            <h1>
-                中和農場 2場
-
-            </h1>
-
+            <h1><%= farmInfo.FIELD_NAME %></h1>
             <ol class="breadcrumb">
-                <li><a href="#"><i class="fa fa-dashboard"></i> 首頁</a></li>
-                <li><a href="#">農場</a></li>
-                <li><a href="#">農場列表</a></li>
-                <li class="active">中和農場 2場</li>
+                <li><a href="/"><i class="fa fa-dashboard"></i> 首頁</a></li>
+                <li><a href="/">農場</a></li>
+                <li><a href="/farm">農場列表</a></li>
             </ol>
         </section>
 
@@ -73,43 +68,20 @@
                 </ul>
 
 
-                <!--<div class="row">-->
-
-                <!--<% metrics.forEach(function (metrics) { %>-->
-                <!--<a href="/equipment/<%= metrics.link %>" class="small-box-footer">-->
-                <!--<div class="col-md-3 col-xs-6 connectedSortable">-->
-                <!--<div class="info-box">-->
-                <!--&lt;!&ndash; Apply any bg-* class to to the icon to color it &ndash;&gt;-->
-                <!--<span class="info-box-icon bg-red"><i class="<%= metrics.icon %>"></i></span>-->
-                <!--<div class="info-box-content">-->
-                <!--<div class="inner">-->
-                <!--<h4><%= metrics.itemNm %></h4>-->
-                <!--<h1><%= metrics.val %></h1>-->
-                <!--</div>-->
-                <!--</div>&lt;!&ndash; /.info-box-content &ndash;&gt;-->
-
-                <!--<div class="text-center">-->
-                <!--感測統計資料<i class="fa fa-arrow-circle-right"></i>-->
-                <!--</div>-->
-                <!--</div>&lt;!&ndash; /.info-box &ndash;&gt;-->
-                <!--</div>-->
-                <!--<% }) %>-->
-                <!--</div>-->
-
                 <div class="tab-content">
                     <div class="tab-pane active" id="tab_1">
                         <!-- Small boxes (Stat box) -->
                         <div class="row">
-                            <% metrics.forEach(function (metrics) { %>
-                            <a href="/farm/<%= metrics.link %>" class="small-box-footer">
-                                <div class="col-md-3 col-xs-6 connectedSortable <%= metrics.itemCd %>">
+                            <% farmInfo.metrics.forEach(function (metric) { %>
+                            <a href="/farm/<%= farmInfo.FIELD_ID%>/datachart/<%= metric.itemCd %>" class="small-box-footer">
+                                <div class="col-md-3 col-xs-6 connectedSortable <%= metric.itemCd %>">
                                     <div class="small-box">
                                         <div class="inner">
-                                            <h4><%= metrics.itemNm %></h4>
-                                            <h1><%= metrics.val %></h1>
+                                            <h4><%= metric.itemNm %></h4>
+                                            <h1><%= metric.val %></h1>
                                         </div>
                                         <div class="icon">
-                                            <i class="<%= metrics.icon %>"></i>
+                                            <i class="<%= metric.icon %>"></i>
                                         </div>
                                         <div class="text-center">
                                             感測統計資料<i class="fa fa-arrow-circle-right"></i>
@@ -148,19 +120,19 @@
                                     <div class="box-body">
                                         <dl class="dl-horizontal">
                                             <dt>農場名稱</dt>
-                                            <dd>第一農場</dd>
+                                            <dd><%= farmInfo.FIELD_NAME%></dd>
                                             <dt>農場地址</dt>
                                             <dd>農場地址農場地址農場地址農場地址農場地址</dd>
                                             <dt>農場所有人</dt>
                                             <dd>黃某某</dd>
                                             <dt>栽種面積</dt>
-                                            <dd>2甲</dd>
+                                            <dd><%= farmInfo.FIELD_AREA%></dd>
                                             <dt>田地種類</dt>
-                                            <dd>溫網室</dd>
+                                            <dd><%= farmInfo.PLAN_AREA_TYPE%></dd>
                                             <dt>使用狀態</dt>
                                             <dd>使用中</dd>
                                             <dt>栽種作物</dt>
-                                            <dd>小黃瓜</dd>
+                                            <dd><%= farmInfo.CROP_TYPE_VARIETY_ID%></dd>
                                             <dt>建立時間</dt>
                                             <dd>1981/10/29</dd>
                                         </dl>
