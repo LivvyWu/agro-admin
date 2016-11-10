@@ -102,6 +102,9 @@
 </div>
 
 <% include ../includejs1.ejs %>
+<!-- DataTables -->
+<script src="/plugins/datatables/jquery.dataTables.min.js"></script>
+<script src="/plugins/datatables/dataTables.bootstrap.min.js"></script>
 
 </body>
 <script>
@@ -109,7 +112,7 @@
     $(function () {
         $('#example1').DataTable({
             "paging": true,
-            "pagingType": "full_numbers",
+            "pagingType": "simple",
             "lengthChange": true,
             "searching": false,
             "ordering": true,
@@ -119,6 +122,10 @@
                 "sLengthMenu": "顯示 _MENU_ 筆記錄",
                 "sZeroRecords": "無符合資料",
                 "sInfo": "目前記錄：_START_ 至 _END_, 總筆數：_TOTAL_",
+                "oPaginate": {
+                    "sPrevious": "上頁",
+                    "sNext": "下頁"
+                }
             }
         });
     });
