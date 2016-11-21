@@ -45,5 +45,14 @@
 </div>
 
 <% include ../includejs.ejs %>
+<script>
+    $(function () {
+        $('li.switch-sidebar').on('click', function (e) {
+            console.log('AA');
+            $('.content-wrapper').toggleClass('on');
+            e.preventDefault();
+        });
+    });
+</script>
 </body>
 </html>
