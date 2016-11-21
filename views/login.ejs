@@ -52,7 +52,7 @@
                 </div>
                 <!-- /.col -->
                 <div class="col-xs-4">
-                    <button type="submit" class="btn btn-primary btn-block btn-flat">登入</button>
+                    <button type="submit" class="btn btn-primary btn-block btn-flat" data-toggle="modal" data-target="#myModal">登入</button>
                 </div>
                 <!-- /.col -->
             </div>
@@ -74,6 +74,30 @@
     <!-- /.login-box-body -->
 </div>
 <!-- /.login-box -->
+
+<div class="example-modal">
+    <div class="modal modal-info" id="myModal">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title">登入資料</h4>
+                </div>
+                <div class="modal-body">
+                    <p>帳號或密碼無效</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-outline">重新登入</button>
+                </div>
+            </div>
+            <!-- /.modal-content -->
+        </div>
+        <!-- /.modal-dialog -->
+    </div>
+    <!-- /.modal -->
+</div>
+<!-- /.example-modal -->
 
 <!-- jQuery 2.2.3 -->
 <script src="/plugins/jQuery/jquery-2.2.3.min.js"></script>
